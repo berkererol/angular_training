@@ -37,9 +37,12 @@
     </button>
 </div>
 <p *ngIf="showDetails"> Secret Password = tuna </p>
-<div *ngFor="let click of clickCount">
+<p *ngFor="let click of clickCount; let i = index"
+    [ngStyle]="{ backgroundColor: i >= 5 ? 'blue' : 'red' }"
+    [ngClass]="{'text-info': i >= 5}"
+>
     {{ click }}
-</div>
+</p>
 <!-- <p [innerText]="allowNewServer"></p> -->
 
 <!-- <input
